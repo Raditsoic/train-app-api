@@ -8,4 +8,5 @@ type Booking struct {
 	PaymentStatus bool       `gorm:"default:false" json:"payment_status"`
 	PaymentType   string     `json:"payment_type"`
 	PaymentDate   time.Time  `json:"payment_date"`
+	Seats         []Seat     `gorm:"many2many:booked_seats" json:"booked_seats"`
 }

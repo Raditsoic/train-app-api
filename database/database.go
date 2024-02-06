@@ -30,7 +30,7 @@ func Connect() error {
 func Migrate() error {
 	if err := DB.AutoMigrate(&models.Train{}, &models.Station{}, &models.Carriage{}, 
 		&models.Seat{}, &models.SeatPrice{}, &models.Booking{}, 
-		&models.Journey{}, &models.BookedSeat{}, &models.User{}); err != nil {
+		&models.Journey{}, &models.User{}); err != nil {
 		return err
 	}
 

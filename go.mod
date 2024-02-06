@@ -5,7 +5,7 @@ go 1.21.4
 require (
 	github.com/gofiber/fiber/v2 v2.52.0
 	gorm.io/driver/postgres v1.5.5
-	gorm.io/gorm v1.25.6
+	gorm.io/gorm v1.25.7
 )
 
 require (

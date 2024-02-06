@@ -6,7 +6,6 @@ import (
 )
 
 func SetupRoutes(app *fiber.App) {
-	SetupBookedSeatRoutes(app, &controllers.BookedSeatController{})
 	SetupBookingRoutes(app, &controllers.BookingController{})
 	SetupCarriageRoutes(app, &controllers.CarriageController{})
 	SetupJourneyRoutes(app, &controllers.JourneyController{})
@@ -23,13 +22,6 @@ func SetupTrainRoutes(app *fiber.App, tc *controllers.TrainController) {
 	train.Delete("/:id", tc.Delete)
 	train.Patch("/:id", tc.Update)
 	train.Get("/:id", tc.GetByID)
-}
-
-func SetupBookedSeatRoutes(app *fiber.App, bs *controllers.BookedSeatController) {
-	booked_seat := app.Group("/booked-seats")
-	booked_seat.Post("/", bs.Create)
-	booked_seat.Get("/seatID=?:seatID", bs.GetAllbySeatID)
-	booked_seat.Get("/bookingID=?:bookingID", bs.GetAllbyBookingID)
 }
 
 func SetupBookingRoutes(app *fiber.App, bc *controllers.BookingController) {
